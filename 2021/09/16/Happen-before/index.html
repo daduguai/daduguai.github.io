@@ -9,7 +9,7 @@
     
     <title>
         
-            volatile原理 |
+            Happens-before |
         
         Daduguai
     </title>
@@ -131,7 +131,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">volatile原理</span>
+            <span class="title-hover-animation">Happens-before</span>
         </div>
 
         
@@ -149,7 +149,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2018-03-13 19:54:23
+        <i class="fas fa-edit"></i>&nbsp;2021-09-16 19:54:23
     </span>
     
     
@@ -177,29 +177,8 @@
         
 
         <div class="article-content markdown-body">
-            <p>#volatile的作用</p>
-<p>1）内存的可见性</p>
-<p>2）禁止指令重排序</p>
-<p>volatile底层原理</p>
-<p>使用volatile修饰的属性，经过JIT编译，生成汇编指令，会有LOCK指令，带有LOCK指令的命令通常有两种作用：</p>
-<p>1）写缓存，会将缓存同步到主存</p>
-<p>2）使其他对共享内存的缓存失效</p>
-<p>3.volatile的优化</p>
-<p>1）缓存行操作，为了使锁的粒度减小，使用缓存行填充，防止对一个对象的不同属性操作，放于一个缓存行中。</p>
-<p>4.操作系统缓存一致性的MESI：</p>
-<p>1）锁总线</p>
-<p>2）锁缓存</p>
-<p>5.Java如何实现原子操作</p>
-<p>1）CAS</p>
-<p>底层使用处理器提共的CMPXCHG</p>
-<p>2）锁</p>
-<p>6.CAS存在问题</p>
-<p>1）ABA问题：</p>
-<p>解决方案：加上版本号</p>
-<p>2）循环时间长开销大：</p>
-<p>PAUSE指令</p>
-<p>3）只能保证一个共享变量的原子操作</p>
-<p>将多个变量打包成一个变量</p>
+            <h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>顾名思义，happens-before,即先序发生，是JMM核心的概念。<br>JMM权衡设计者与使用者，从设计者的角度，对内部模型的使用，希望能够易理解，便于编程，希望一个强内存模型；<br>从编译器和处理器角度，希望内存模型对它们的束缚越少越好。这样方便它优化提高性能。所以它希望的是一个若内存模型。</p>
+<h4 id="重排序"><a href="#重排序" class="headerlink" title="重排序"></a>重排序</h4><p>两类：<br>    改变程序结果:JMM禁止<br>    不改变执行结果的重排序:JMM不做要求<br>JMM遵循原则:只要不改变程序的执行结果(单线程程序和正确同步的多线程程序)，编译器和处理器怎么优化都可。<a href="%E3%80%8AJava%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E3%80%8B">1</a></p>
 
         </div>
 
@@ -208,21 +187,21 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2018/03/13/volatile%E5%8E%9F%E7%90%86/"
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/08/28/Redis--%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8%E5%9F%BA%E7%A1%80/"
                         >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">volatile原理</span>
-                                <span class="post-nav-item">Prev posts</span>
+                                <span class="post-nav-title-item">Redis数据库存储</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
                             </span>
                         </a>
                     </div>
-                
                 
             </div>
         
