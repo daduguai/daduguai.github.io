@@ -9,7 +9,7 @@
     
     <title>
         
-            分布式系统的认识 |
+            设计原则 |
         
         Daduguai
     </title>
@@ -131,7 +131,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">分布式系统的认识</span>
+            <span class="title-hover-animation">设计原则</span>
         </div>
 
         
@@ -149,7 +149,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2019-06-25 20:23:27
+        <i class="fas fa-edit"></i>&nbsp;2018-09-19 10:19:34
     </span>
     
     
@@ -158,7 +158,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/DISTRIBUTED/">DISTRIBUTED</a>&nbsp;
+                        <a href="/tags/Design-Pattern/">Design-Pattern</a>&nbsp;
                     </li>
                 
             </ul>
@@ -177,29 +177,12 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="技术源于业务"><a href="#技术源于业务" class="headerlink" title="技术源于业务"></a>技术源于业务</h2><p>早期系统刚搭建，业务需求也不大，单系统便能够解决所有的需求。<br>随着业务的增加，访问量增大，需要解决一系列的问题，分布式系统诞生。</p>
-<h3 id="分布式发展"><a href="#分布式发展" class="headerlink" title="分布式发展"></a>分布式发展</h3><pre><code>- 20世纪90年代前，单体架构
-- 2000年左右出现SOA架构，通过ESB联动其他的服务
-- 2010年后，出现微服务架构
+            <h3 id="1-Demeter法则"><a href="#1-Demeter法则" class="headerlink" title="1 Demeter法则"></a>1 Demeter法则</h3><p>最小知识原则，即每个类与其他类进行交互，只需要知道有限的信息，不该有依赖的类之间不要有依赖，降低耦合。<br>优点:实现高内聚低耦合<br>缺点:很多时候通过辅助类实现最小知识原则(友元类),增加了复杂性。</p>
+<h3 id="2-DRY原则-Don’t-repeat-yourself"><a href="#2-DRY原则-Don’t-repeat-yourself" class="headerlink" title="2 DRY原则(Don’t repeat yourself)"></a>2 DRY原则(Don’t repeat yourself)</h3><pre><code>功能语义重复
+实现逻辑重复
+代码执行重复
 </code></pre>
-<h3 id="提高架构的性能"><a href="#提高架构的性能" class="headerlink" title="提高架构的性能"></a>提高架构的性能</h3><pre><code>- 加缓存
-- 负载均衡
-- 异步调用
-- 数据镜像
-- 数据分区
-</code></pre>
-<h3 id="提高架构的稳定性"><a href="#提高架构的稳定性" class="headerlink" title="提高架构的稳定性"></a>提高架构的稳定性</h3><pre><code>- 服务拆分
-- 服务冗余
-- 限流降级
-- 高可用架构
-- 高可用运维
-</code></pre>
-<h3 id="分布式系统关键技术"><a href="#分布式系统关键技术" class="headerlink" title="分布式系统关键技术"></a>分布式系统关键技术</h3><pre><code>- 全栈系统监控
-- 服务/资源调度
-- 流量调度
-- 状态/数据调度
-- 开发和运维自动化
-</code></pre>
+<h3 id="3-KISS-Keep-it-simple-and-stupid"><a href="#3-KISS-Keep-it-simple-and-stupid" class="headerlink" title="3 KISS(Keep it simple and stupid)"></a>3 KISS(Keep it simple and stupid)</h3><p>使用简单的方法，类似于奥卡姆剃刀法则。</p>
 
         </div>
 
@@ -211,13 +194,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2020/05/13/JVM-Java%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/"
+                           href="/2019/06/25/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%A4%E8%AF%86/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">JVM--Java内存布局</span>
+                                <span class="post-nav-title-item">分布式系统的认识</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -227,10 +210,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2018/09/19/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99--Demeter%E6%B3%95%E5%88%99/"
+                           href="/2018/08/29/%E7%AE%97%E6%B3%95--%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">设计原则</span>
+                                <span class="post-nav-title-item">哈希算法</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
